@@ -1,0 +1,2 @@
+﻿LIBCMT.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 _main，函数 "int __cdecl __scrt_common_main_seh(void)" (?__scrt_common_main_seh@@YAHXZ) 中引用了该符号
+D:\VS2018\2022_code\C_CODE\test_1_3\Debug\test_1_3.exe : fatal error LNK1120: 1 个无法解析的外部命令
