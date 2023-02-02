@@ -84,19 +84,19 @@
 
 //字符串就是一串字符 - 用双引号括起来的一串字符
 
-#include <string.h>
-int main()
-{
+//#include <string.h>
+//int main()
+//{
 	//字符数组 - 数组是一组形同类型的元素
 	//字符串在结尾的位置隐藏了一个\0的字符
 	//\0是字符串的结束标志
-	char arr[] = "hello";
-	char arr1[] = "abc";
-	char arr2[] = { 'a', 'b', 'c' };
+	//char arr[] = "hello";
+	//char arr1[] = "abc";
+	//char arr2[] = { 'a', 'b', 'c' };
 
-	////求字符串长度
-	printf("%d\n", strlen(arr1));
-	printf("%d\n", strlen(arr2));
+	//////求字符串长度
+	//printf("%d\n", strlen(arr1));
+	//printf("%d\n", strlen(arr2));
 
 
 
@@ -109,5 +109,25 @@ int main()
 
 
 
+	/*return 0;
+}*/
+
+
+
+//
+
+
+
+int main()
+{
+	int line = 0;
+	while(line < 30000)
+	{
+		printf("写代码:%d\n", line);
+		line++;
+	}
+	if ( line == 30000 )
+	 printf( "拿到了好offer");
+	
 	return 0;
 }
