@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 
-////1.计算n的阶乘
+//1.计算n的阶乘
 //int main() {
 //	int i = 0;
 //	int n = 0;
@@ -60,32 +60,32 @@
 
 
 ////在一个有序数组中查找具体的某个数字n。编写int binsearch(int x, int v[], int n);功能：在v[0]<=v[1]<=v[2].....<=v[n-1]的数组中查找x.
-//int main() {
-//	int arr []= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-//	int k = 7;
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	int right = sz - 1;
-//	int left = 0;
-//	
-//	while (left <= right) {
-//		int mid =( right+left)/2;
-//		if (arr[mid] < k) {
-//			left = mid + 1;
-//		}
-//		else if (arr[mid] > k) {
-//			right = mid - 1;
-//		}
-//		else
-//		{
-//			printf("k的下标已找到，为:%d\n", mid);
-//			break;
-//		}
-//	}
-//	if (left > right) {
-//		printf("此数不存在");
-//	}
-//	return 0;
-//}
+int main() {
+	int arr []= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int k = 7;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int right = sz - 1;
+	int left = 0;
+	
+	while (left <= right) {
+		int mid =( right+left)/2;
+		if (arr[mid] < k) {
+			left = mid + 1;
+		}
+		else if (arr[mid] > k) {
+			right = mid - 1;
+		}
+		else
+		{
+			printf("k的下标已找到，为:%d\n", mid);
+			break;
+		}
+	}
+	if (left > right) {
+		printf("此数不存在");
+	}
+	return 0;
+}
 
 
 
@@ -138,54 +138,54 @@
 
 
 
-#include <stdlib.h>、
-#include <time.h>
-//猜数字游戏
-void begin() {
-
-	printf("*************猜数字********\n");
-	printf("**********1.开始游戏*******\n");
-	printf("**********0.退出游戏*******\n");
-	printf("****************************\n");
-
-}
-void game() {
-	int random_num = rand()%100+1;
-	
-	int num1 = 0;
-	
-	while (1) {
-		printf("请输入:<\n");
-		scanf("%d", &num1);
-		if (num1 > random_num)
-			printf("猜大了\n"); 
-		else if (num1 < random_num)
-			printf("猜小了\n"); 
-		else
-		{printf("输入正确！\n"); break;
-		}
-	}
-
-	
-
-}
-
-int main() {
-	begin();
-	int num = 0;
-	srand((unsigned)time(NULL));
-	
-	do {
-		printf("请输入数字:<\n");
-		scanf("%d", &num);
-		switch (num) {
-		case 1:game();
-			break;
-		case 0:break;
-		default:printf("输入错误，请重新输入：<\n");break;
-		}
-	}while (num);
-
-	return 0;
-
-}
+//#include <stdlib.h>、
+//#include <time.h>
+////猜数字游戏
+//void begin() {
+//
+//	printf("*************猜数字********\n");
+//	printf("**********1.开始游戏*******\n");
+//	printf("**********0.退出游戏*******\n");
+//	printf("****************************\n");
+//
+//}
+//void game() {
+//	int random_num = rand()%100+1;
+//	
+//	int num1 = 0;
+//	
+//	while (1) {
+//		printf("请输入:<\n");
+//		scanf("%d", &num1);
+//		if (num1 > random_num)
+//			printf("猜大了\n"); 
+//		else if (num1 < random_num)
+//			printf("猜小了\n"); 
+//		else
+//		{printf("输入正确！\n"); break;
+//		}
+//	}
+//
+//	
+//
+//}
+//
+//int main() {
+//	begin();
+//	int num = 0;
+//	srand((unsigned)time(NULL));
+//	
+//	do {
+//		printf("请输入数字:<\n");
+//		scanf("%d", &num);
+//		switch (num) {
+//		case 1:game();
+//			break;
+//		case 0:break;
+//		default:printf("输入错误，请重新输入：<\n");break;
+//		}
+//	}while (num);
+//
+//	return 0;
+//
+//}
