@@ -59,8 +59,10 @@
 
 
 
+#include <assert.h>
 void my_strcpy(char*arr1, char*arr2)
 {
+	assert(arr2 != NULL);
 	while (*arr1++ = *arr2++) ; //‘\0'等于0,又使得循环停止。
 }
 int main()
