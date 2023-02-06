@@ -105,29 +105,42 @@
 
 
 //打印整数二进制的奇数位和偶数位
-int f1(int num)
-{
-	int i = 0;
-	int count = 0;
-	//打印偶数位
-	for(i = 31; i>=0; i-=2)
-	{
-		printf("%d ", 1 & (num >> i));
-	}
-	printf("\n");
-	//打印奇数位
-	for (i = 30; i >= 0; i -= 2)
-	{
-		printf("%d ", 1 & (num >> i));
-	}
+//int f1(int num)
+//{
+//	int i = 0;
+//	int count = 0;
+//	//打印偶数位
+//	for(i = 31; i>=0; i-=2)
+//	{
+//		printf("%d ", 1 & (num >> i));
+//	}
+//	printf("\n");
+//	//打印奇数位
+//	for (i = 30; i >= 0; i -= 2)
+//	{
+//		printf("%d ", 1 & (num >> i));
+//	}
+//}
+//
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	f1(num);
+//	return 0;
+//}
 
-	
-}
 
+
+//交换两个变量（不存在临时变量）
 int main()
 {
-	int num = 0;
-	scanf("%d", &num);
-	f1(num);
+	int a = 0;
+	int b = 0;
+	scanf("%d %d", &a, &b);
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	printf("%d %d", a, b);
 	return 0;
 }
