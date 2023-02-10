@@ -86,23 +86,73 @@
 
 
 
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//
+//	int(*pa)[10] = &arr;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *((*pa) + i));
+//	}
+//	return 0;
+//}
+//
+//
+//
+////P是一个数组指针
+//void print2(int (*p)[5], int r, int c)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < r; i++)
+//	{
+//		for (j = 0; j < c; j++)
+//		{
+//			printf("%d ", *(*(p + i) + j));//打印出全部的二维数组
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//	print2(arr, 3, 5);//arr数组名，表示首元素的地址
+//	return 0;
+//}
+
+
+
+//一维数组传参
+void test(int arr[])//ok?
+{}
+void test(int arr[10])//ok?
+{}
+void test(int *arr)//ok?
+{}
+void test2(int *arr[20])//ok?
+{}
+void test2(int **arr)//ok?
+{}
 int main()
 {
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-
-	int(*pa)[10] = &arr;
-	int i = 0;
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", *((*pa) + i));
-	}
-	return 0;
+	int arr[10] = { 0 };
+	int* arr2[20] = { 0 };
+	test(arr);
+	test2(arr2);
 }
 
-
-
+//二维数组传参
+void test(int arr[][5])
+{}
+void test2(int (*arr)[5])
+{}
 int main()
 {
-
-	return 0;
+	int arr[10] = { 0 };
+	int* arr2[20] = { 0 };
+	test(arr);
+	test2(arr2);
 }
