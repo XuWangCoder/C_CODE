@@ -193,50 +193,153 @@
 
 
 
-//输入一个整数数组，实现一个函数，来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，所有偶数位于数组的后半部分
+////输入一个整数数组，实现一个函数，来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，所有偶数位于数组的后半部分
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//void move(int arr[], int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left < right)
+//	{
+//		//从前往后找一个偶数
+//		while ((left < right) && (arr[left] % 2 == 1))
+//		{
+//			left++;
+//		}
+//		//从后往前找一个奇数
+//		while ((left < right) && (arr[right] % 2 == 0))
+//		{
+//			right--;
+//		}
+//		if (left < right)
+//		{
+//			int tmp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = tmp;
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	move(arr, sz);
+//	print(arr, sz);
+//	return 0;
+//}
 
-void print(int arr[], int sz)
-{
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
-}
-
-void move(int arr[], int sz)
-{
-	int left = 0;
-	int right = sz - 1;
-	while (left < right)
-	{
-		//从前往后找一个偶数
-		while ((left < right) && (arr[left] % 2 == 1))
-		{
-			left++;
-		}
-		//从后往前找一个奇数
-		while ((left < right) && (arr[right] % 2 == 0))
-		{
-			right--;
-		}
-		if (left < right)
-		{
-			int tmp = arr[left];
-			arr[left] = arr[right];
-			arr[right] = tmp;
-		}
-}
 
 
-}
-int main()
-{
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	gets(arr);
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	move(arr, sz);
-	print(arr, sz);
-	return 0;
-}
+////在屏幕上打印杨辉三角
+////1
+////1 1
+////1 2 1
+////1 3 3 1
+////..................
+//void print(int arr[10][10])
+//{
+//	int i = 0;
+//	for (i=0;i<10;i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <=i; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10][10] = {0};
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <=i; j++)
+//		{
+//			if (j==0)
+//			{
+//				arr[i][j]=1;
+//			}
+//			if (i == j)
+//			{
+//				arr[i][j] = 1;
+//			}
+//			if (j > 0 && i>1)
+//			{
+//				arr[i][j] = arr[i-1][j-1] + arr[i-1][j];
+//			}
+//		}
+//	}
+//	print(arr);
+//	return 0;
+//}
+
+
+
+//
+////警察通过排查确定杀人凶手必为四个中的一个,写程序判断凶手
+////A：不是我。  B：是c。  C:是d。  D：c在胡说。
+////三个人说的是真话，一个人说的是假话
+//int main()
+//{
+//	char killer = 0;
+//	for (killer = 'A'; killer <= 'D'; killer++)
+//	{
+//		if ((killer != 'A') + (killer == 'C') + (killer == 'D') + (killer != 'D') == 3)//必然三个条件为1，一个条件为0（判断正确为1，判断错误为0）
+//		{
+//			printf("%c\n", killer);
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+////5位运动员参加10米跳水比赛，预测比赛结果
+////A:b第二，我第三。 B：我第二，e第四。 C：我第一，d第二。 D：c最后，我第三。 E：我第四，a第一。
+////每位选手都说对了一半，请编程确定比赛的名次。
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	int d = 0;
+//	int e = 0;
+//	for (a = 1; a <= 5; a++)
+//	{
+//		for (b = 1; b <= 5; b++)
+//		{
+//			for (c = 1; c <= 5; c++)
+//			{
+//				for (d = 1; d <= 5; d++)
+//				{
+//					for (e = 1; e <= 5; e++)
+//					{
+//						if( (b==2)+(a==3)==1
+//							&&(b==2)+(e==4)==1
+//							&&(c==1)+(d==2)==1
+//							&&(c==5)+(d==3)==1
+//							&&(e==4)+(a==1)==1
+//							&& a*b*c*d*e==120
+//							)
+//							printf("a=%d b=%d c=%d d=%d e=%d\n ", a, b, c, d, e);
+//					}
+//				}
+//			}
+//		}
+//	}
+//	return 0;
+//}
