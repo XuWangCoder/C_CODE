@@ -288,7 +288,7 @@
 //				int (*cmp)(const void* e1, const void* e2)//是用来比较待排序数据中的2个元素的函数
 //);
 
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <string.h>
 int cmp_int(const void* e1, const void* e2)
 {
@@ -305,51 +305,51 @@ void print_arr(int arr[], int sz)
 	printf("\n");
 }
 
-void test1()
-{
-	//整形数据的排序
-	int arr[] = { 9,0,6,2,5,8,4,3,7,1 };
-	int sz = sizeof(arr) / sizeof(arr[10]);
-	//排序
-	qsort(arr, sz, sizeof(arr[0]), cmp_int);
-	//打印
-	print_arr(arr, sz);
-}
-
-struct Stu
-{
-	char name[20];
-	int age;
-};
-
-int sort_by_age(const void* e1, const void* e2)
-{
-	return ((struct Stu*)e1)->age - ((struct Stu*)e2)->age;
-}
-
-int sort_by_name(const void* e1, const void* e2)
-{
-	return strcmp(((struct Stu*)e1)->name, ((struct Stu*)e2)->name);
-}
-
-void test2()
-{
-	//使用qsort函数排序结构体数据
-	struct Stu s[3] = { {"zhangsan", 30},{"lisi", 34},{"wangwu", 20} };
-	//abcq
-	//abc
-	int sz = sizeof(s) / sizeof(s[0]); 
-	//按照年龄来排序
-	//qsort(s, sz, sizeof(s[0]), sort_by_age);
-	//按照名字来排序
-	qsort(s, sz, sizeof(s[0]), sort_by_name);
-}
+//void test1()
+//{
+//	//整形数据的排序
+//	int arr[] = { 9,0,6,2,5,8,4,3,7,1 };
+//	int sz = sizeof(arr) / sizeof(arr[10]);
+//	//排序
+//	qsort(arr, sz, sizeof(arr[0]), cmp_int);
+//	//打印
+//	print_arr(arr, sz);
+//}
+//
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+//
+//int sort_by_age(const void* e1, const void* e2)
+//{
+//	return ((struct Stu*)e1)->age - ((struct Stu*)e2)->age;
+//}
+//
+//int sort_by_name(const void* e1, const void* e2)
+//{
+//	return strcmp(((struct Stu*)e1)->name, ((struct Stu*)e2)->name);
+//}
+//
+//void test2()
+//{
+//	//使用qsort函数排序结构体数据
+//	struct Stu s[3] = { {"zhangsan", 30},{"lisi", 34},{"wangwu", 20} };
+//	//abcq
+//	//abc
+//	int sz = sizeof(s) / sizeof(s[0]); 
+//	//按照年龄来排序
+//	//qsort(s, sz, sizeof(s[0]), sort_by_age);
+//	//按照名字来排序
+//	qsort(s, sz, sizeof(s[0]), sort_by_name);
+//}
 
 void test3()
 {
 	//整形数据的排序
 	int arr[] = { 9,0,6,2,5,8,4,3,7,1 };
-	int sz = sizeof(arr) / sizeof(arr[10]);
+	int sz = sizeof(arr) / sizeof(arr[0]);
 	//排序
 	bubble_sort(arr, sz, sizeof(arr[0]), cmp_int);
 	//打印
@@ -371,11 +371,7 @@ void Swap(char* buf1, char* buf2, int width)
 }
 
 //模仿qsort实现一个冒泡排序的通用算法
-void bubble_sort(void* base, 
-							int sz,
-							int width,
-							int (*cmp)(const void*e1, const void*e2)
-							)
+void bubble_sort(void* base,  int sz,  int width,  int (*cmp)(const void*e1, const void*e2) )
 {
 	int i = 0;
 	//趟数
@@ -387,10 +383,10 @@ void bubble_sort(void* base,
 		{
 			//两个元素比较
 			//arr[j] arr[j+1]
-			if (cmp((char*)base+j*width, (char*)base+(j+1)*width ) > 0)
+			if (cmp( (char*)base+j*width, (char*)base+(j+1)*width ) > 0)
 			{
 				//交换
-				Swap((char*)base+j*width, (char*)base+(j+1)*width, width);
+				Swap( (char*)base+j*width, (char*)base+(j+1)*width, width);
 			}
 		}
 	}
