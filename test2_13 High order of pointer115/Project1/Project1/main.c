@@ -288,7 +288,7 @@
 //				int (*cmp)(const void* e1, const void* e2)//是用来比较待排序数据中的2个元素的函数
 //);
 
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <string.h>
 int cmp_int(const void* e1, const void* e2)
 {
@@ -304,6 +304,20 @@ void print_arr(int arr[], int sz)
 	}
 	printf("\n");
 }
+
+void Swap(char* buf1, char* buf2, int width)
+{
+	int i = 0;
+	for (i = 0; i < width; i++)//每次交换一个字节
+	{
+		char tmp = *buf1;
+		*buf1 = *buf2;
+		*buf2 = tmp;
+		buf1++;
+		buf2++;
+	}
+}
+
 
 //void test1()
 //{
@@ -345,33 +359,8 @@ void print_arr(int arr[], int sz)
 //	qsort(s, sz, sizeof(s[0]), sort_by_name);
 //}
 
-void test3()
-{
-	//整形数据的排序
-	int arr[] = { 9,0,6,2,5,8,4,3,7,1 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	//排序
-	bubble_sort(arr, sz, sizeof(arr[0]), cmp_int);
-	//打印
-	print_arr(arr, sz);
-}
-
-
-void Swap(char* buf1, char* buf2, int width)
-{
-	int i = 0;
-	for (i = 0; i < width; i++)//每次交换一个字节
-	{
-		char tmp = *buf1;
-		*buf1 = *buf2;
-		*buf2 = tmp;
-		buf1++;
-		buf2++;
-	}
-}
-
 //模仿qsort实现一个冒泡排序的通用算法
-void bubble_sort(void* base,  int sz,  int width,  int (*cmp)(const void*e1, const void*e2) )
+void bubble_sort(void* base, int sz, int width, int (*cmp)(const void* e1, const void* e2))
 {
 	int i = 0;
 	//趟数
@@ -383,13 +372,24 @@ void bubble_sort(void* base,  int sz,  int width,  int (*cmp)(const void*e1, con
 		{
 			//两个元素比较
 			//arr[j] arr[j+1]
-			if (cmp( (char*)base+j*width, (char*)base+(j+1)*width ) > 0)
+			if (cmp((char*)base + j * width, (char*)base + (j + 1) * width) > 0)
 			{
 				//交换
-				Swap( (char*)base+j*width, (char*)base+(j+1)*width, width);
+				Swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
 			}
 		}
 	}
+}
+
+void test3()
+{
+	//整形数据的排序
+	int arr[] = { 9,0,6,2,5,8,4,3,7,1};
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//排序
+	bubble_sort(arr, sz, sizeof(arr[0]), cmp_int);
+	//打印
+	print_arr(arr, sz);
 }
 
 int main()

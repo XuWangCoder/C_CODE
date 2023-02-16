@@ -1,3 +1,2 @@
 ﻿  main.c
-D:\VS2018\2022_code\C_CODE\test2_13 High order of pointer115\Project1\Project1\main.c(354,13): warning C4013: “bubble_sort”未定义；假设外部返回 int
-D:\VS2018\2022_code\C_CODE\test2_13 High order of pointer115\Project1\Project1\main.c(374,6): error C2371: “bubble_sort”: 重定义；不同的基类型
+  Project1.vcxproj -> D:\VS2018\2022_code\C_CODE\test2_13 High order of pointer115\Project1\Debug\Project1.exe

@@ -39,21 +39,34 @@
 
 
 
-//结构体大小为20个字节
-struct Test
-{
-	int Num;
-	char* pcName;
-	short sDate;
-	char cha[2];
-	short sBa[4];
-}*p;
-//假设p 的值为0x1000000。如下表达式的值分别为多少？
-//已知，结构体Test类型的变量大小是20个字节
+////结构体大小为20个字节
+//struct Test
+//{
+//	int Num;
+//	char* pcName;
+//	short sDate;
+//	char cha[2];
+//	short sBa[4];
+//}*p;
+////假设p 的值为0x1000000。如下表达式的值分别为多少？
+////已知，结构体Test类型的变量大小是20个字节
+//int main()
+//{
+//	printf("%p\n", p + 0x1);//0x100014
+//	printf("%p\n", (unsigned long)p + 0x1);//0x100001
+//	printf("%p\n", (unsigned int*)p + 0x1);//0x100004
+//	//（int）x是将数据强制转换为int型。而（int *）是强制了指针类型转换
+//	return 0;
+//}
+
+
+
 int main()
 {
-	printf("%p\n", p + 0x1);
-	printf("%p\n", (unsigned long)p + 0x1);
-	printf("%p\n", (unsigned int*)p + 0x1);
+	int a[4] = { 1,2,3,4 };
+	int* ptr1 = (int*)(&a + 1);
+	int* ptr2 = (int*)((int)a + 1);
+
+	printf("%x, %x", ptr1[-1], *ptr2);// 4  2000000
 	return 0;
 }
