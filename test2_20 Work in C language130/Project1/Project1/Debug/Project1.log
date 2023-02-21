@@ -1,0 +1,3 @@
+﻿  main.c
+D:\VS2018\2022_code\C_CODE\test2_20 Work in C language130\Project1\Project1\main.c(112,16): warning C4013: “strlen”未定义；假设外部返回 int
+  Project1.vcxproj -> D:\VS2018\2022_code\C_CODE\test2_20 Work in C language130\Project1\Debug\Project1.exe
