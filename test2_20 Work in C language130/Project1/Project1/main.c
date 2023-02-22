@@ -90,37 +90,85 @@
 //	return 0;
 //}
 
-//方法二
-#include <assert.h>
-//三步反转法
-void reverse(char* left, char* right)
-{
-	assert(left);
-	assert(right);
-	while (left < right)
-	{
-		char tmp = *left;
-		*left = *right;
-		*right = tmp;
-		left++;
-		right--;
-	}
-}
+////方法二
+//#include <assert.h>
+////三步反转法
+//void reverse(char* left, char* right)
+//{
+//	assert(left);
+//	assert(right);
+//	while (left < right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//void string_left_rotate(char* str, int k)
+//{
+//	int n = strlen(str);
+//	reverse(str,str+k-1);//左
+//	reverse(str+k,str+n-1);//右
+//	reverse(str,str+n-1);//整体
+//}
+//
+//int main()
+//{
+//	char arr[10] = "ABCDEF";
+//	int k = 3;
+//	string_left_rotate(arr, k);
+//	printf("%s\n", arr);
+//
+//	return 0;
+//}
 
-void string_left_rotate(char* str, int k)
-{
-	int n = strlen(str);
-	reverse(str,str+k-1);//左
-	reverse(str+k,str+n-1);//右
-	reverse(str,str+n-1);//整体
-}
 
-int main()
-{
-	char arr[10] = "ABCDEF";
-	int k = 2;
-	string_left_rotate(arr, k);
-	printf("%s\n", arr);
 
-	return 0;
-}
+////写一个函数判断一个字符串是否为另外一个字符串旋转之后的字符串
+////例如：给定s1=AABCD和s2=BCDAA，返回1
+////给定s1=abcd和s2=ACBD,返回0
+//#include <string.h>
+//int is_string_rotate(char* str1, char* str2)
+//{
+//	//长度不相等，肯定不是旋转得到的
+//	if ( strlen(str1) != strlen(str2))
+//	{
+//		return 0;
+//	}
+//
+//	//1. str1字符串的后边追加一个str1
+//	//AABCDAABCD
+//	int len = strlen(str1);
+//	strncat(str1, str1, len);
+//	//2.判断str2是否为str1的字串
+//	char* ret = strstr(str1, str2);
+//
+//	return ret != NULL;
+//	/*if (ret == NULL)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		return 1;
+//	}*/
+//}
+//
+//int main()
+//{
+//	char arr1[20] = "AABCD";
+//	char arr2[] = "BCDAA";
+//	int ret = is_string_rotate(arr1, arr2);
+//	if (ret == 1)
+//	{
+//		printf("yes\n");
+//	}
+//	else
+//	{
+//		printf("no\n");
+//	}
+//	return 0;
+//}
